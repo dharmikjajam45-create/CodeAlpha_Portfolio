@@ -107,7 +107,7 @@ button {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 26px;
 }
 
 .nav-links a {
@@ -116,7 +116,8 @@ button {
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
   color: #9b6b28;
 }
 
@@ -732,6 +733,13 @@ button {
   padding-top: 3px;
 }
 
+.project-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
 .projects-note {
   text-align: center;
   font: 10px var(--mono);
@@ -799,6 +807,66 @@ button {
   font: 16px var(--mono);
   text-align: right;
 }
+
+/* RESUME SECTION */
+
+.resume-card {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 60px;
+  margin-top: 65px;
+  padding: clamp(30px, 6vw, 70px);
+  background: var(--paper-dark);
+  border: 1px solid var(--line);
+}
+
+.resume-label {
+  font: 10px var(--mono);
+  letter-spacing: 1.5px;
+  color: var(--muted);
+}
+
+.resume-content h2 {
+  margin: 35px 0 22px;
+  font: 700 clamp(38px, 5vw, 65px)/1.2 var(--heading);
+  letter-spacing: -3px;
+}
+
+.resume-content h2 span {
+  color: var(--green);
+}
+
+.resume-content p {
+  max-width: 420px;
+  color: #65695f;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.resume-details {
+  border-top: 1px solid var(--line);
+}
+
+.resume-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.resume-details span {
+  color: var(--muted);
+  font: 9px var(--mono);
+  letter-spacing: 1px;
+}
+
+.resume-details strong {
+  font: 500 15px var(--body);
+  color: var(--ink);
+}
+
+/* CONTACT */
 
 .contact-section {
   padding-top: 110px;
@@ -892,6 +960,7 @@ button {
 }
 
 /* Entrance animations */
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -914,6 +983,7 @@ button {
 }
 
 /* Tablet */
+
 @media (max-width: 850px) {
   .hero-grid {
     grid-template-columns: 1fr 0.8fr;
@@ -939,15 +1009,20 @@ button {
   }
 
   .nav-links {
-    gap: 17px;
+    gap: 14px;
   }
 
   .nav-links a {
     font-size: 9px;
   }
+
+  .resume-card {
+    gap: 35px;
+  }
 }
 
 /* Mobile */
+
 @media (max-width: 650px) {
   .top-strip {
     font-size: 8px;
@@ -1141,6 +1216,21 @@ button {
   .timeline-symbol {
     grid-column: 2;
     grid-row: 2;
+  }
+
+  .resume-card {
+    grid-template-columns: 1fr;
+    gap: 35px;
+    padding: 28px 22px;
+    margin-top: 40px;
+  }
+
+  .resume-content h2 {
+    font-size: clamp(36px, 10vw, 55px);
+  }
+
+  .resume-details strong {
+    font-size: 14px;
   }
 
   .contact-card {
